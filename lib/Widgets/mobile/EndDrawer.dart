@@ -5,7 +5,8 @@ import 'package:myportfolio/Global/Constants.dart';
 import 'package:myportfolio/Global/Fonts.dart';
 
 class EndDrawer extends StatefulWidget {
-  const EndDrawer({super.key});
+  const EndDrawer({super.key, required this.onNavItemTap});
+  final Function(int) onNavItemTap;
 
   @override
   State<EndDrawer> createState() => _EndDrawerState();
@@ -35,7 +36,9 @@ class _EndDrawerState extends State<EndDrawer> {
           ),
           for (int i = 0; i < AppConstants.navTitleNames.length; i++)
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                widget.onNavItemTap(i);
+              },
               child: ListTile(
                 title: Text(AppConstants.navTitleNames[i]),
                 leading: Icon(AppConstants.navTitleIcons[i]),

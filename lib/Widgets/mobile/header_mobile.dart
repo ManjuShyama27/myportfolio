@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myportfolio/Global/Colors.dart';
 import 'package:myportfolio/Global/Styles.dart';
 import 'package:myportfolio/Widgets/Site_logo.dart';
 
@@ -25,7 +26,12 @@ class _HeaderMobileState extends State<HeaderMobile> {
             onTap: widget.onLogoTap,
           ),
           Spacer(),
-          IconButton(onPressed: widget.onMenuTap, icon: Icon(Icons.menu)),
+          IconButton(
+              onPressed: widget.onMenuTap,
+              icon: Icon(
+                Icons.menu,
+                color: AppColors.white,
+              )),
           SizedBox(width: 20),
         ],
       ),

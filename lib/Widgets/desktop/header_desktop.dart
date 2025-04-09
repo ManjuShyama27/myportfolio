@@ -6,8 +6,9 @@ import 'package:myportfolio/Global/Styles.dart';
 import 'package:myportfolio/Widgets/Site_logo.dart';
 
 class HeaderDesktop extends StatefulWidget {
-  const HeaderDesktop({super.key, this.onTap});
+  const HeaderDesktop({super.key, this.onTap, required this.onNavMenuTap});
   final VoidCallback? onTap;
+  final Function(int) onNavMenuTap;
 
   @override
   State<HeaderDesktop> createState() => _HeaderDesktopState();
@@ -33,7 +34,9 @@ class _HeaderDesktopState extends State<HeaderDesktop> {
                 AppConstants.navTitleNames[i],
                 style: AppTextStyles.textbutton(),
               ),
-              onPressed: () {},
+              onPressed: () {
+                widget.onNavMenuTap(i);
+              },
             )
         ],
       ),
